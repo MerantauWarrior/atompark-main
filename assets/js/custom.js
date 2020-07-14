@@ -32,13 +32,22 @@ $(document).ready(function () {
   }
 
   if($('.js-home-counter').length > 0){
-    var initalHCNumber = parseInt($('.js-home-counter').text());
-    console.log(initalHCNumber.toLocaleString());
-    console.log(new Intl.NumberFormat().format(initalHCNumber));
+    function formattedHC(initalHCNumber) {
+      if(initalHCNumber > 99999999){
+        $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{3})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      }else if(initalHCNumber > 9999999){
+        $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{2})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      }else {
+        $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{1})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      }
+    }
+    var initalHCNumber = parseInt(localStorage.getItem('homeCounter') ? localStorage.getItem('homeCounter') : 1000000);
+    formattedHC(initalHCNumber);
     setInterval(function () {
-      initalHCNumber = initalHCNumber+1;
-      $('.js-home-counter').text(initalHCNumber.toLocaleString());
-    }, 1000)
+      initalHCNumber = initalHCNumber + parseInt(Math.random()*10);
+      localStorage.setItem('homeCounter', initalHCNumber);
+      formattedHC(initalHCNumber);
+    }, parseInt(Math.random()*10)*1000)
   }
 
 
