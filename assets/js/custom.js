@@ -31,5 +31,15 @@ $(document).ready(function () {
     // });
   }
 
+  if($('.js-home-counter').length > 0){
+    var initalHCNumber = parseInt($('.js-home-counter').text());
+    console.log(initalHCNumber.toLocaleString());
+    console.log(new Intl.NumberFormat().format(initalHCNumber));
+    setInterval(function () {
+      initalHCNumber = initalHCNumber+1;
+      $('.js-home-counter').text(initalHCNumber.toLocaleString());
+    }, 1000)
+  }
+
 
 });
