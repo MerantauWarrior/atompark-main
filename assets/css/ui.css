@@ -7,7 +7,7 @@ ul li,
 ol li{
     position: relative;
 }
-button, input, textarea, a, .slick-slide{
+button, input, textarea, a, div{
     outline: none;
 }
 input[type="checkbox"],
@@ -91,6 +91,7 @@ a:hover{
     line-height: 21px;
     text-transform: uppercase;
     text-decoration: none !important;
+    cursor: pointer;
 }
 .btn:hover{
     background-color: #F7B916;
@@ -104,17 +105,4 @@ a:hover{
     color: #1062AA;
     border: 2px solid #1062AA;
     background-color: transparent;
-}
-.slick-dots{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slick-dots button{
-    font-size: 0;
-    line-height: 0;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    cursor: pointer;
 }
