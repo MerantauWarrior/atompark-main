@@ -145,7 +145,6 @@
 }
 .home-regural__slider .slick-track{
     display: flex;
-    flex-wrap: wrap;
 }
 .home-regural__slider .slick-slide{
     height: auto;
