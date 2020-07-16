@@ -51,13 +51,6 @@ $(document).ready(function () {
     });
   }
 
-  if($('.home-program').length > 0){
-    $('.home-program-item').on('mouseover',function () {
-      $('.home-program-item').removeClass('home-program-item_active');
-      $(this).addClass('home-program-item_active');
-    });
-  }
-
   if($('.reviews-slider').length > 0){
     $('.reviews-slider').slick({
       infinite: false,

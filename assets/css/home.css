@@ -281,14 +281,10 @@ ul.home-regural-slide__list li:before{
 .home-program-item:after{
     content: "";
     position: absolute;
-    display: none;
     right: -98px;
     width: 68px;
     height: 6px;
     background: transparent url('../img/home/home-program-pointer.svg') center center no-repeat;
-}
-.home-program-item_active:after{
-    display: block;
 }
 .home-program-item:nth-child(even):after{
     right: auto;
@@ -342,29 +338,6 @@ ul.home-regural-slide__list li:before{
 .home-program-item__icon svg{
     display: block;
     max-width: 100%;
-}
-.home-program-item__icon_inactive{
-    display: block;
-}
-.home-program-item__icon_active{
-    display: none;
-}
-.home-program-item_active .home-program-item__icon_active{
-    display: block;
-}
-.home-program-item_active .home-program-item__icon_inactive{
-    display: none;
-}
-.home-program-item__content{
-    visibility: hidden;
-    -webkit-transition: all 0s;
-    -moz-transition: all 0s;
-    -ms-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s;
-}
-.home-program-item_active .home-program-item__content{
-    visibility: visible;
 }
 .home-program-item:nth-child(even) .home-program-item__icon{
     width: 43px;
@@ -476,19 +449,6 @@ ul.home-regural-slide__list li:before{
     .home-regural-slide{
         padding: 30px;
     }
-    /*program*/
-    .home-program-item_active:after{
-        display: none;
-    }
-    .home-program-item__content{
-        visibility: visible;
-    }
-    .home-program-item__icon_active{
-        display: block;
-    }
-    .home-program-item__icon_inactive{
-        display: none;
-    }
     /*services*/
     #homeServices > div{
         max-width: 360px;
@@ -517,6 +477,10 @@ ul.home-regural-slide__list li:before{
     }
     .home-about-item__img-ml{
         margin-left: 0;
+    }
+    /*program*/
+    .home-program-item:after{
+        display: none;
     }
 }
 @media all and (min-width: 320px) and (max-width: 767px){
@@ -642,15 +606,6 @@ ul.home-regural-slide__list li:before{
         -ms-transform: translate(0);
         -o-transform: translate(0);
         transform: translate(0);
-    }
-    .home-program-item__icon_active{
-        display: block;
-    }
-    .home-program-item__icon_inactive{
-        display: none;
-    }
-    .home-program-item__content{
-        visibility: visible;
     }
     .home-program-item:nth-child(even) .home-program-item__content{
         order: 2;
