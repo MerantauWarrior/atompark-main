@@ -93,13 +93,13 @@ a:hover{
     text-decoration: none !important;
     cursor: pointer;
 }
+.btn{
+    background-color: #1062AA;
+    color: #FFFFFF;
+}
 .btn:hover{
     background-color: #F7B916;
     color: #1062AA;
-}
-.btn{
-    color: #FFFFFF;
-    background-color: #1062AA;
 }
 .btn-p{
     color: #1062AA;

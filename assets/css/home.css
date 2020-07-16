@@ -234,6 +234,24 @@ ul.home-regural-slide__list li:before{
 .yellow .home-regural-slide__list li:before{
     background-color: #FFE735;
 }
+.maroon .home-regural-slide__list li:before{
+    background-color: #FF6341;
+}
+.cornfieldblue .home-regural-slide__list li:before{
+    background-color: #00ADEE;
+}
+.lime .home-regural-slide__list li:before{
+    background-color: #DDF516;
+}
+.darkviolet .home-regural-slide__list li:before{
+    background-color: #010059;
+}
+.greencyan .home-regural-slide__list li:before{
+    background-color: #6FC6AD;
+}
+.salad .home-regural-slide__list li:before{
+    background-color: #8CC63F;
+}
 .home-regural-slide .btn-p{
     margin-top: auto;
 }
@@ -441,6 +459,18 @@ ul.home-regural-slide__list li:before{
 }
 .inp-home-boost:-moz-placeholder{
     color: #1062AA;
+}
+.inp-home-boost:focus::-webkit-input-placeholder{
+    color: transparent;
+}
+.inp-home-boost:focus::-moz-placeholder{
+    color: transparent;
+}
+.inp-home-boost:focus:-ms-input-placeholder{
+    color: transparent;
+}
+.inp-home-boost:focus:-moz-placeholder{
+    color: transparent;
 }
 
 /*--- MEDIA ---*/

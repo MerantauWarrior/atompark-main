@@ -1,5 +1,10 @@
 $(document).ready(function () {
-  console.log('JQ');
+
+  //Footer
+  $('.footer-menu__arrow').click(function () {
+    $(this).toggleClass('footer-menu__arrow_opened');
+    $(this).parent().parent().find('.footer-menu__list').slideToggle(250);
+  });
 
   if($('.home-regural__slider').length > 0){
     $('#homeBestsellers').slick({
