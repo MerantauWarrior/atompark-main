@@ -9,6 +9,23 @@ $(document).ready(function () {
   }, function () {
     $('.header-submenu-product img').attr('src', 'assets/img/header/header-change-placeholder.png');
   })
+  //header mobile
+  $('.header-mobile-menu-toggle').click(function () {
+    $('.header-navigation').slideToggle();
+  });
+  $('.header-menu__link').click(function (e) {
+    if(typeof $(this).attr('href') !== typeof undefined && $(this).attr('href') !== false){
+      return true;
+    }else{
+      e.preventDefault();
+      $(this).toggleClass('header-menu__link_active');
+      $(this).siblings('.header-submenu').slideToggle();
+    }
+  })
+  $('.header-submenu__top').click(function () {
+    $(this).toggleClass('header-submenu__top_active');
+    $(this).siblings('.header-submenu__list').slideToggle();
+  })
   //Footer
   $('.footer-menu__arrow').click(function () {
     $(this).toggleClass('footer-menu__arrow_opened');
