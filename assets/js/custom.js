@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+  //Header
+  $('.header-submenu__list-link').hover(function () {
+    var srcImg = $(this).data('img')
+    if(typeof srcImg !== typeof undefined && srcImg !== false){
+      $('.header-submenu-product img').attr('src', srcImg);
+    }
+  }, function () {
+    $('.header-submenu-product img').attr('src', 'assets/img/header/header-change-placeholder.png');
+  })
   //Footer
   $('.footer-menu__arrow').click(function () {
     $(this).toggleClass('footer-menu__arrow_opened');
