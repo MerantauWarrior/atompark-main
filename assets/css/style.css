@@ -41,17 +41,19 @@ body{
     align-items: flex-start;
 }
 .header-logo{
-    float: left;
+    width: 25%;
     margin-top: 4px;
 }
 .header-top{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 75%;
     margin-left: auto;
 }
 .header-search{
     position: relative;
+    margin-left: auto;
 }
 .inp-header-search{
     width: 300px;
@@ -147,6 +149,7 @@ body{
 }
 .header-navigation{
     margin-left: auto;
+    margin-top: 23px;
 }
 .header-menu{
     display: flex;
@@ -158,12 +161,33 @@ body{
 .header-menu__link{
     display: flex;
     align-items: center;
+    padding-bottom: 30px;
     font-size: 18px;
     line-height: 21px;
     color: #807E7E;
 }
 .header-menu__link:hover{
     text-decoration: none;
+}
+.header-menu__link:after{
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 9px;
+    background-color: #6FC6AD;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.header-menu__item:hover .header-menu__link:after{
+    width: 100%;
 }
 .header-menu__arrow{
     width: 8px;
