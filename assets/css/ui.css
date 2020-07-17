@@ -49,18 +49,21 @@ h6{
 button, input, textarea, select{
     outline: none;
     border: none;
+    background-color: transparent;
 }
 button, input{
     padding: 0;
 }
-img {
+img, svg{
     display: block;
     max-width: 100%;
 }
 a,
 a svg,
 a svg *,
-button{
+button,
+button svg,
+button svg *{
     -webkit-transition: all 0.25s;
     -moz-transition: all 0.25s;
     -ms-transition: all 0.25s;

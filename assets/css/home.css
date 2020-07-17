@@ -42,6 +42,9 @@
     display: inline-block;
     margin-left: 33px;
 }
+.btn__home-cta-video svg{
+    display: block;
+}
 .btn__home-cta-video path{
     stroke: #1062AA;
     fill: transparent;
@@ -553,6 +556,9 @@ ul.home-regural-slide__list li:before{
     }
     .home-about-item__title{
         margin-top: 15px;
+    }
+    .home-about__art{
+        display: none;
     }
     /*counter*/
     .home-counter{
