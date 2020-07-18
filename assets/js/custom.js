@@ -1,4 +1,22 @@
-function mobileStuff() {
+//Helpers
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
+  console.log('you use mobile');
+}
+
+$(document).ready(function () {
+  //Header
+  $('.header-submenu__list-link').hover(function () {
+    var srcImg = $(this).data('img')
+    if(typeof srcImg !== typeof undefined && srcImg !== false){
+      $('.header-submenu-product img').attr('src', srcImg);
+    }
+  }, function () {
+    $('.header-submenu-product img').attr('src', 'assets/img/header/header-change-placeholder.png');
+  })
+  $('.header-lang span').click(function () {
+    $('.header-lang__select').fadeToggle(250);
+  });
+  //header mobile
   if($(window).width() < 768){
     var lastScrollTop = 0;
     window.addEventListener("scroll", function(){
@@ -6,10 +24,10 @@ function mobileStuff() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop){
           if(st>window.innerHeight/2){
-            $('.header-search').slideUp(250);
+            $('.header-search').fadeOut(250);
           }
         } else {
-          $('.header-search').slideDown(250);
+          $('.header-search').fadeIn(250);
         }
         lastScrollTop = st <= 0 ? 0 : st;
       }
@@ -34,28 +52,6 @@ function mobileStuff() {
   }else{
     $(window).off("scroll");
   }
-}
-
-//Helpers
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
-  console.log('you use mobile');
-}
-
-$(document).ready(function () {
-  //Header
-  $('.header-submenu__list-link').hover(function () {
-    var srcImg = $(this).data('img')
-    if(typeof srcImg !== typeof undefined && srcImg !== false){
-      $('.header-submenu-product img').attr('src', srcImg);
-    }
-  }, function () {
-    $('.header-submenu-product img').attr('src', 'assets/img/header/header-change-placeholder.png');
-  })
-  $('.header-lang span').click(function () {
-    $('.header-lang__select').fadeToggle(250);
-  });
-  //header mobile
-  mobileStuff();
   //Footer
   $('.footer-menu__arrow').click(function () {
     $(this).toggleClass('footer-menu__arrow_opened');
@@ -159,5 +155,3 @@ $(document).ready(function () {
   }
 
 });
-
-$(window).resize(mobileStuff);
