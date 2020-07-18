@@ -1,5 +1,47 @@
-$(document).ready(function () {
+function mobileStuff() {
+  if($(window).width() < 768){
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", function(){
+      if($(window).width() < 768){
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop){
+          if(st>window.innerHeight/2){
+            $('.header-search').slideUp(250);
+          }
+        } else {
+          $('.header-search').slideDown(250);
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+      }
+    }, false);
+    $('.header-mobile-menu-toggle').click(function () {
+      $('body').toggleClass('ovh');
+      $('.header').toggleClass('header-navigation_opened');
+    });
+    $('.header-menu__link').click(function (e) {
+      if(typeof $(this).attr('href') !== typeof undefined && $(this).attr('href') !== false){
+        return true;
+      }else{
+        e.preventDefault();
+        $(this).toggleClass('header-menu__link_active');
+        $(this).siblings('.header-submenu').slideToggle(250);
+      }
+    })
+    $('.header-submenu__top').click(function () {
+      $(this).toggleClass('header-submenu__top_active');
+      $(this).siblings('.header-submenu__list').slideToggle(250);
+    })
+  }else{
+    $(window).off("scroll");
+  }
+}
 
+//Helpers
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
+  console.log('you use mobile');
+}
+
+$(document).ready(function () {
   //Header
   $('.header-submenu__list-link').hover(function () {
     var srcImg = $(this).data('img')
@@ -9,23 +51,11 @@ $(document).ready(function () {
   }, function () {
     $('.header-submenu-product img').attr('src', 'assets/img/header/header-change-placeholder.png');
   })
-  //header mobile
-  $('.header-mobile-menu-toggle').click(function () {
-    $('.header-navigation').slideToggle();
+  $('.header-lang span').click(function () {
+    $('.header-lang__select').fadeToggle(250);
   });
-  $('.header-menu__link').click(function (e) {
-    if(typeof $(this).attr('href') !== typeof undefined && $(this).attr('href') !== false){
-      return true;
-    }else{
-      e.preventDefault();
-      $(this).toggleClass('header-menu__link_active');
-      $(this).siblings('.header-submenu').slideToggle();
-    }
-  })
-  $('.header-submenu__top').click(function () {
-    $(this).toggleClass('header-submenu__top_active');
-    $(this).siblings('.header-submenu__list').slideToggle();
-  })
+  //header mobile
+  mobileStuff();
   //Footer
   $('.footer-menu__arrow').click(function () {
     $(this).toggleClass('footer-menu__arrow_opened');
@@ -128,5 +158,6 @@ $(document).ready(function () {
     }, parseInt(Math.ceil(Math.random()*10))*1000)
   }
 
-
 });
+
+$(window).resize(mobileStuff);
