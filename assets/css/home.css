@@ -41,6 +41,7 @@
 .btn__home-cta-video{
     display: inline-block;
     margin-left: 33px;
+    cursor: pointer;
 }
 .btn__home-cta-video svg{
     display: block;

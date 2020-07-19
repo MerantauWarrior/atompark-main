@@ -19,7 +19,7 @@ $(document).ready(function () {
   //header mobile
   if($(window).width() < 768){
     var lastScrollTop = 0;
-    window.addEventListener("scroll", function(){
+    $(window).on("scroll", function(){
       if($(window).width() < 768){
         var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop){
@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
         lastScrollTop = st <= 0 ? 0 : st;
       }
-    }, false);
+    });
     $('.header-mobile-menu-toggle').click(function () {
       $('body').toggleClass('ovh');
       $('.header').toggleClass('header-navigation_opened');
@@ -58,22 +58,28 @@ $(document).ready(function () {
     $(this).parent().parent().find('.footer-menu__list').slideToggle(250);
   });
 
+  // HOME
   if($('.home-cta').length > 0){
-    $('.btn__home-cta-video').click(function (e) {
-      e.preventDefault();
+    $('.btn__home-cta-video').click(function () {
       $('.modal').show();
-      var src = $('.modal-home-cta__video iframe').data('src');
-      $('.modal-home-cta__video iframe').attr('src', src);
+      if($('.modal-home-cta__video iframe').attr('src') === undefined || $('.modal-home-cta__video iframe').attr('src') === null){
+        $('.modal-home-cta__video iframe').attr('src', $('.modal-home-cta__video iframe').data('src'));
+      }else{
+        $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}','*');
+      }
     });
     $('.modal-home-cta__close').click(function () {
+      $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
       $('.modal').hide();
     });
-    $(document).click(function(event) {
-      if(event.target === $('.modal')[0]){
-        $('.modal').hide();
+    $('.js-modal-home-cta').click(function(event) {
+      if(event.target === this){
+        $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
+        $(this).hide();
       }
     });
   }
+
   if($('.home-regural__slider').length > 0){
     $('#homeBestsellers').slick({
       infinite: false,
@@ -124,6 +130,27 @@ $(document).ready(function () {
     });
   }
 
+  if($('.js-home-counter').length > 0){
+    function formattedHC(initalHCNumber) {
+      // if(initalHCNumber > 99999999){
+      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{3})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      // }else if(initalHCNumber > 9999999){
+      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{2})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      // }else {
+      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{1})(\d{3})(\d{3})$/g, '$1, $2 $3'));
+      // }
+      $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d+)(\d{3})(\d{3})$/g, '$1, $2 $3'));
+    }
+    var initalHCNumber = parseInt(localStorage.getItem('homeCounter') ? localStorage.getItem('homeCounter') : 1000000);
+    formattedHC(initalHCNumber);
+    setInterval(function () {
+      initalHCNumber = initalHCNumber + parseInt(Math.ceil(Math.random()*10));
+      localStorage.setItem('homeCounter', initalHCNumber);
+      formattedHC(initalHCNumber);
+    }, parseInt(Math.ceil(Math.random()*10))*1000)
+  }
+
+  // Reviews
   if($('.reviews-slider').length > 0){
     $('.reviews-slider').slick({
       infinite: false,
@@ -148,26 +175,6 @@ $(document).ready(function () {
         $('.reviews-slider-arrow--next').removeClass('reviews-slider-arrow_inactive');
       }
     });
-  }
-
-  if($('.js-home-counter').length > 0){
-    function formattedHC(initalHCNumber) {
-      // if(initalHCNumber > 99999999){
-      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{3})(\d{3})(\d{3})$/g, '$1, $2 $3'));
-      // }else if(initalHCNumber > 9999999){
-      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{2})(\d{3})(\d{3})$/g, '$1, $2 $3'));
-      // }else {
-      //   $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d{1})(\d{3})(\d{3})$/g, '$1, $2 $3'));
-      // }
-      $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d+)(\d{3})(\d{3})$/g, '$1, $2 $3'));
-    }
-    var initalHCNumber = parseInt(localStorage.getItem('homeCounter') ? localStorage.getItem('homeCounter') : 1000000);
-    formattedHC(initalHCNumber);
-    setInterval(function () {
-      initalHCNumber = initalHCNumber + parseInt(Math.ceil(Math.random()*10));
-      localStorage.setItem('homeCounter', initalHCNumber);
-      formattedHC(initalHCNumber);
-    }, parseInt(Math.ceil(Math.random()*10))*1000)
   }
 
 });
