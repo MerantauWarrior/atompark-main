@@ -189,7 +189,7 @@ $(document).ready(function () {
       } else {
         $('.sp .slider-arrow--prev').addClass('slider-arrow_inactive');
       }
-      if (currentSlide + 1 >= count) {
+      if (currentSlide + 3 >= count) {
         $('.sp .slider-arrow--next').addClass('slider-arrow_inactive');
       } else {
         $('.sp .slider-arrow--next').removeClass('slider-arrow_inactive');
