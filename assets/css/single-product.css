@@ -86,7 +86,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     padding-bottom: 100px;
 }
 .sp-steps-item:last-child{
@@ -121,6 +121,7 @@
     justify-content: center;
     width: 76px;
     height: 76px;
+    margin: 0 auto;
     background-color: #EF5237;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
