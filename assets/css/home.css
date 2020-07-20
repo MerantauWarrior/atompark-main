@@ -11,16 +11,6 @@
     transform: translateX(-50%);
     z-index: 0;
 }
-.circle {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    top: -1rem;
-    left: -1rem;
-    border-radius: 50%;
-    background: red;
-    z-index: 2;
-}
 /*cta*/
 .home-cta{
     margin-top: 135px;
@@ -71,6 +61,11 @@
 .btn__home-cta-video path{
     stroke: #1062AA;
     fill: transparent;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
 }
 .btn__home-cta-video:hover path{
     stroke: #F7B916;
@@ -592,6 +587,9 @@ ul.home-regural-slide__list li:before{
     }
 }
 @media all and (min-width: 320px) and (max-width: 767px){
+    .line{
+        display: none;
+    }
     /*cta*/
     .home-cta{
         margin-top: 30px;
