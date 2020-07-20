@@ -561,7 +561,7 @@ ul.home-regural-slide__list li:before{
         text-align: center;
         margin-bottom: 30px;
     }
-    /*modal*/
+    /*modal cta*/
     .modal-home-cta{
         width: 75%;
     }
@@ -747,7 +747,7 @@ ul.home-regural-slide__list li:before{
     .inp-home-boost{
         margin: 30px 0;
     }
-    /*modal*/
+    /*modal cta*/
     .modal-home-cta{
         width: 100%;
     }

@@ -47,12 +47,10 @@ h6{
     line-height: 21px;
 }
 button, input, textarea, select{
+    padding: 0;
     outline: none;
     border: none;
     background-color: transparent;
-}
-button, input{
-    padding: 0;
 }
 img, svg{
     display: block;
@@ -78,7 +76,8 @@ a:hover{
     text-decoration: underline;
 }
 .btn,
-.btn-p{
+.btn-p,
+.btn-maroon{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,54 +108,58 @@ a:hover{
     border: 2px solid #1062AA;
     background-color: transparent;
 }
-.btn-p-maroon:hover,
+.btn-maroon{
+    border: 2px solid #EF5237;
+    color: #333333;
+}
+.btn-maroon:hover,
 .maroon .btn-p:hover{
     background-color: #FF6341;
     border: 2px solid #FF6341;
 }
-.btn-p-cornfieldblue:hover,
+.btn-cornfieldblue:hover,
 .cornfieldblue .btn-p:hover{
     background-color: #00ADEE;
     border: 2px solid #00ADEE;
 }
-.btn-p-lime:hover,
+.btn-lime:hover,
 .lime .btn-p:hover{
     background-color: #DDF516;
     border: 2px solid #DDF516;
 }
-.btn-p-darkviolet:hover,
+.btn-darkviolet:hover,
 .darkviolet .btn-p:hover{
     background-color: #010059;
     color: #ffffff;
     border: 2px solid #010059;
 }
-.btn-p-yellow:hover,
+.btn-yellow:hover,
 .yellow .btn-p:hover{
     background-color: #FFE735;
     border: 2px solid #FFE735;
 }
-.btn-p-blue:hover,
+.btn-blue:hover,
 .blue .btn-p:hover{
     background-color: #4AE4E4;
     border: 2px solid #4AE4E4;
 }
-.btn-p-greencyan:hover,
+.btn-greencyan:hover,
 .greencyan .btn-p:hover{
     background-color: #6FC6AD;
     border: 2px solid #6FC6AD;
 }
-.btn-p-pink:hover,
+.btn-pink:hover,
 .pink .btn-p:hover{
     background-color: #EB008B;
     color: #ffffff;
     border: 2px solid #EB008B;
 }
-.btn-p-salad:hover,
+.btn-salad:hover,
 .salad .btn-p:hover{
     background-color: #8CC63F;
     border: 2px solid #8CC63F;
 }
-.btn-p-orange:hover,
+.btn-orange:hover,
 .orange .btn-p:hover{
     background-color: #F7B916;
     border: 2px solid #F7B916;
