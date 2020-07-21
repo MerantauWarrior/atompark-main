@@ -31,6 +31,12 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
 }
 
 $(document).ready(function () {
+  // General
+  $('.video-play').click(function () {
+    $(this).hide();
+    $(this).parent().addClass('video_playing');
+    $(this).siblings('iframe').attr('src', $(this).siblings('iframe').data('src'));
+  });
   //Header
   $('.header-submenu__list-link').hover(function () {
     var srcImg = $(this).data('img')

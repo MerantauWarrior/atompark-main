@@ -398,10 +398,6 @@
         margin-bottom: 30px;
     }
     /*navigation*/
-    /*.sp-navigation__list{*/
-    /*    flex-direction: column;*/
-    /*    align-items: center;*/
-    /*}*/
     .sp-navigation__list-item{
         margin: 0 10px;
     }
