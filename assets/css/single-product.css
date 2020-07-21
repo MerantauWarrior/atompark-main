@@ -413,6 +413,7 @@
         margin: 45px 0;
     }
     .sp-steps-item{
+        flex-direction: column;
         padding-bottom: 45px;
     }
     .sp-steps-item:not(:last-child):after{
@@ -425,7 +426,8 @@
     .sp-steps-item:nth-child(even) .sp-steps-item__img{
         order: 2;
         justify-content: center;
-        margin: 25px 0;
+        max-width: 70%;
+        margin: 25px auto;
     }
     .sp-steps-item:nth-child(even) .sp-steps-item__content{
         order: 3;
