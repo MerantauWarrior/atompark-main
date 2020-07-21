@@ -190,7 +190,23 @@ $(document).ready(function () {
       slidesToShow: 3,
       slidesToScroll: 1,
       prevArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--prev'),
-      nextArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--next')
+      nextArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--next'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
     $('.video-slider__slider').each(function () {
       var slider = $(this);
@@ -211,7 +227,23 @@ $(document).ready(function () {
       slidesToShow: 4,
       slidesToScroll: 1,
       prevArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--prev'),
-      nextArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--next')
+      nextArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--next'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
     $('#spReviews').slick({
       infinite: false,

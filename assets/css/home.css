@@ -410,10 +410,6 @@ ul.home-regural-slide__list li:before{
     -o-transform: translate(-50%,0);
     transform: translate(-50%,0);
 }
-.home-program-btn{
-    display: flex;
-    justify-content: center;
-}
 /*services*/
 .home-services{
     padding-top: 125px;
@@ -689,7 +685,6 @@ ul.home-regural-slide__list li:before{
         position: static;
         display: flex;
         justify-content: center;
-        margin-bottom: 30px;
         -webkit-transform: translate(0);
         -moz-transform: translate(0);
         -ms-transform: translate(0);

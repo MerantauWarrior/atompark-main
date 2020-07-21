@@ -499,11 +499,11 @@ body{
 }
 .reviews-list .slider-arrow{
     top: 50px;
-    -webkit-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    transform: translate(0,0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 .slider-arrow--next{
     right: -70px;
@@ -578,6 +578,7 @@ body{
 }
 .reviews-slide__all-link{
     display: inline-flex;
+    align-items: center;
     font-size: 14px;
     line-height: 16px;
     text-decoration-line: underline;
