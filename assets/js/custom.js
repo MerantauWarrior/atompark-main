@@ -25,6 +25,7 @@
 // });
 
 //Helpers
+document.addEventListener("touchstart", function(){}, true);
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
   console.log('you use mobile');
 }
