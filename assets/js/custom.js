@@ -1,3 +1,29 @@
+// multiple equal sliders on one page
+// $('.video__movies-slider').each(function () {
+//   var slider = $(this);
+//   slider.slick({
+//     dots: false,
+//     infinite: false,
+//     slidesToShow: 1,
+//     prevArrow: slider.parent().find('.video__arrow-prev'),
+//     nextArrow: slider.parent().find('.video__arrow-next')
+//   });
+//   slider.parent().find('.video__arrow-prev').hide();
+//   slider.on('afterChange', function (event, slick, currentSlide) {
+//     var count = slick.slideCount;
+//     if (currentSlide > 0) {
+//       slider.parent().find('.video__arrow-prev').show();
+//     } else {
+//       slider.parent().find('.video__arrow-prev').hide();
+//     }
+//     if (currentSlide + 1 >= count) {
+//       slider.parent().find('.video__arrow-next').hide();
+//     } else {
+//       slider.parent().find('.video__arrow-next').show();
+//     }
+//   });
+// });
+
 //Helpers
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
   console.log('you use mobile');
@@ -130,6 +156,18 @@ $(document).ready(function () {
     });
   }
 
+  if($('#homeReviews').length > 0){
+    $('#homeReviews').slick({
+      infinite: false,
+      dots: false,
+      arrows: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('#homeReviews').parent().find('.slider-arrow--prev'),
+      nextArrow: $('#homeReviews').parent().find('.slider-arrow--next')
+    });
+  }
+
   if($('.js-home-counter').length > 0){
     function formattedHC(initalHCNumber) {
       $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d+)(\d{3})(\d{3})$/g, '$1, $2 $3'));
@@ -143,57 +181,46 @@ $(document).ready(function () {
     }, parseInt(Math.ceil(Math.random()*10))*1000)
   }
 
-  // REVIEWS SLIDER
-  if($('.reviews-slider').length > 0){
-    $('.reviews-slider').slick({
-      infinite: false,
-      dots: false,
-      arrows: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: $('.reviews-slider-arrow--prev'),
-      nextArrow: $('.reviews-slider-arrow--next')
-    });
-    $('.reviews-slider-arrow--prev').addClass('reviews-slider-arrow_inactive');
-    $('.reviews-slider').on('afterChange', function (event, slick, currentSlide) {
-      var count = slick.slideCount;
-      if (currentSlide > 0) {
-        $('.reviews-slider-arrow--prev').removeClass('reviews-slider-arrow_inactive');
-      } else {
-        $('.reviews-slider-arrow--prev').addClass('reviews-slider-arrow_inactive');
-      }
-      if (currentSlide + 1 >= count) {
-        $('.reviews-slider-arrow--next').addClass('reviews-slider-arrow_inactive');
-      } else {
-        $('.reviews-slider-arrow--next').removeClass('reviews-slider-arrow_inactive');
-      }
-    });
-  }
-
   // SINGLE PRODUCT
   if($('.sp').length > 0){
-    $('.sp-features-slider').slick({
+    $('#spFeaturesSlider').slick({
       infinite: false,
       dots: false,
       arrows: true,
       slidesToShow: 3,
       slidesToScroll: 1,
-      prevArrow: $('.sp .slider-arrow--prev'),
-      nextArrow: $('.sp .slider-arrow--next')
+      prevArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--prev'),
+      nextArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--next')
     });
-    $('.sp .slider-arrow--prev').addClass('slider-arrow_inactive');
-    $('.sp-features-slider').on('afterChange', function (event, slick, currentSlide) {
-      var count = slick.slideCount;
-      if (currentSlide > 0) {
-        $('.sp .slider-arrow--prev').removeClass('slider-arrow_inactive');
-      } else {
-        $('.sp .slider-arrow--prev').addClass('slider-arrow_inactive');
-      }
-      if (currentSlide + 3 >= count) {
-        $('.sp .slider-arrow--next').addClass('slider-arrow_inactive');
-      } else {
-        $('.sp .slider-arrow--next').removeClass('slider-arrow_inactive');
-      }
+    $('.video-slider__slider').each(function () {
+      var slider = $(this);
+      slider.slick({
+        infinite: false,
+        dots: false,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: slider.parent().find('.slider-arrow--prev'),
+        nextArrow: slider.parent().find('.slider-arrow--next')
+      });
+    });
+    $('.sp-recommended__slider').slick({
+      infinite: false,
+      dots: false,
+      arrows: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      prevArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--prev'),
+      nextArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--next')
+    });
+    $('#spReviews').slick({
+      infinite: false,
+      dots: true,
+      arrows: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('#spReviews').parent().find('.slider-arrow--prev'),
+      nextArrow: $('#spReviews').parent().find('.slider-arrow--next')
     });
   }
 

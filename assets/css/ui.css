@@ -164,3 +164,28 @@ a:hover{
     background-color: #F7B916;
     border: 2px solid #F7B916;
 }
+.typography{
+    font-size: 18px;
+    line-height: 28px;
+}
+.typography h2{
+    margin: 65px 0;
+}
+.typography img{
+    margin: 76px auto;
+}
+.typography ul li{
+    padding-left: 20px;
+}
+.typography ul li:before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: #1062AA;
+}
