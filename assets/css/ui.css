@@ -164,6 +164,7 @@ a:hover{
     background-color: #F7B916;
     border: 2px solid #F7B916;
 }
+/*typography*/
 .typography{
     font-size: 18px;
     line-height: 28px;
@@ -174,10 +175,10 @@ a:hover{
 .typography img{
     margin: 76px auto;
 }
-.typography ul li{
+.typography ul:not(.slick-dots) li{
     padding-left: 20px;
 }
-.typography ul li:before{
+.typography ul:not(.slick-dots) li:before{
     content: "";
     position: absolute;
     top: 12px;
@@ -188,4 +189,14 @@ a:hover{
     -moz-border-radius: 100%;
     border-radius: 100%;
     background-color: #1062AA;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px){
+    /*typography*/
+    .typography h2{
+        margin: 32px 0;
+    }
+    .typography img{
+        margin: 38px auto;
+    }
 }

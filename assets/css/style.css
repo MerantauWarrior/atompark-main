@@ -719,6 +719,10 @@ body{
         max-width: 90%;
         margin: 0 auto;
     }
+    /*slider*/
+    .slider-arrow{
+        display: none;
+    }
 }
 @media all and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
     /*header*/
@@ -998,7 +1002,7 @@ body{
     }
     /*reviews*/
     .reviews-list{
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .reviews-slide{
         flex-wrap: wrap;
@@ -1019,12 +1023,15 @@ body{
         top: 50%;
         margin-top: -14px;
     }
-    .reviews-slider{
-        max-width: 80%;
-        margin: 0 auto;
-    }
     /*slider*/
     .slick-dots{
         margin-top: 19px;
+    }
+    .slider-arrow{
+        display: none;
+    }
+    /*video*/
+    .video-slider{
+        margin: 38px auto;
     }
 }

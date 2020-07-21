@@ -164,7 +164,22 @@ $(document).ready(function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('#homeReviews').parent().find('.slider-arrow--prev'),
-      nextArrow: $('#homeReviews').parent().find('.slider-arrow--next')
+      nextArrow: $('#homeReviews').parent().find('.slider-arrow--next'),
+      responsive: [
+        {
+          breakpoint: 9999,
+          settings: "unslick"
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   }
 
@@ -193,8 +208,17 @@ $(document).ready(function () {
       nextArrow: $('#spFeaturesSlider').parent().find('.slider-arrow--next'),
       responsive: [
         {
+          breakpoint: 1300,
+          settings: {
+            dots: true,
+            arrows: false
+          }
+        },
+        {
           breakpoint: 1024,
           settings: {
+            dots: true,
+            arrows: false,
             slidesToShow: 2,
             slidesToScroll: 1
           }
@@ -202,8 +226,11 @@ $(document).ready(function () {
         {
           breakpoint: 600,
           settings: {
+            dots: true,
+            arrows: false,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            adaptiveHeight: true
           }
         }
       ]
@@ -217,7 +244,25 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: slider.parent().find('.slider-arrow--prev'),
-        nextArrow: slider.parent().find('.slider-arrow--next')
+        nextArrow: slider.parent().find('.slider-arrow--next'),
+        responsive: [
+          {
+            breakpoint: 1300,
+            settings: {
+              dots: true,
+              arrows: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              dots: true,
+              arrows: false,
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       });
     });
     $('.sp-recommended__slider').slick({
@@ -230,15 +275,26 @@ $(document).ready(function () {
       nextArrow: $('.sp-recommended__slider').parent().find('.slider-arrow--next'),
       responsive: [
         {
+          breakpoint: 1300,
+          settings: {
+            dots: true,
+            arrows: false
+          }
+        },
+        {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 2,
+            dots: true,
+            arrows: false,
+            slidesToShow: 3,
             slidesToScroll: 1
           }
         },
         {
           breakpoint: 600,
           settings: {
+            dots: true,
+            arrows: false,
             slidesToShow: 1,
             slidesToScroll: 1
           }
@@ -252,7 +308,25 @@ $(document).ready(function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('#spReviews').parent().find('.slider-arrow--prev'),
-      nextArrow: $('#spReviews').parent().find('.slider-arrow--next')
+      nextArrow: $('#spReviews').parent().find('.slider-arrow--next'),
+      responsive: [
+        {
+          breakpoint: 1300,
+          settings: {
+            dots: true,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   }
 
