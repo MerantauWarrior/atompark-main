@@ -44,7 +44,7 @@ $(document).ready(function () {
       $('.header-submenu-product img').attr('src', srcImg);
     }
   }, function () {
-    $('.header-submenu-product img').attr('src', 'assets/img/general/header/placeholder.png');
+    $('.header-submenu-product img').attr('src', 'assets/img/general/placeholder.png');
   })
   $('.header-lang span').click(function () {
     $('.header-lang__select').fadeToggle(250);
