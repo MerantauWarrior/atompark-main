@@ -1,34 +1,30 @@
-// multiple equal sliders on one page
-// $('.video__movies-slider').each(function () {
-//   var slider = $(this);
-//   slider.slick({
-//     dots: false,
-//     infinite: false,
-//     slidesToShow: 1,
-//     prevArrow: slider.parent().find('.video__arrow-prev'),
-//     nextArrow: slider.parent().find('.video__arrow-next')
-//   });
-//   slider.parent().find('.video__arrow-prev').hide();
-//   slider.on('afterChange', function (event, slick, currentSlide) {
-//     var count = slick.slideCount;
-//     if (currentSlide > 0) {
-//       slider.parent().find('.video__arrow-prev').show();
-//     } else {
-//       slider.parent().find('.video__arrow-prev').hide();
-//     }
-//     if (currentSlide + 1 >= count) {
-//       slider.parent().find('.video__arrow-next').hide();
-//     } else {
-//       slider.parent().find('.video__arrow-next').show();
-//     }
-//   });
-// });
-
 //Helpers
 document.addEventListener("touchstart", function(){}, true);
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
   console.log('you use mobile');
 }
+//Lazy load images
+document.addEventListener("DOMContentLoaded", function() {
+  function isVisible(elem) {
+    let coords = elem.getBoundingClientRect();
+    let windowHeight = document.documentElement.clientHeight;
+    let topVisible = coords.top > 0 && coords.top < windowHeight;
+    let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+    return topVisible || bottomVisible;
+  }
+  function showVisible() {
+    for (let img of document.querySelectorAll('img.lazy-load')) {
+      let realSrc = img.dataset.src;
+      if (!realSrc) continue;
+      if (isVisible(img)) {
+        img.src = realSrc;
+        img.dataset.src = '';
+      }
+    }
+  }
+  window.addEventListener('scroll', showVisible);
+  showVisible();
+});
 
 $(document).ready(function () {
   // General
@@ -174,16 +170,10 @@ $(document).ready(function () {
       nextArrow: $('#homeReviews').parent().find('.slider-arrow--next'),
       responsive: [
         {
-          breakpoint: 9999,
-          settings: "unslick"
-        },
-        {
           breakpoint: 600,
           settings: {
             dots: true,
-            arrows: false,
-            slidesToShow: 1,
-            slidesToScroll: 1
+            arrows: false
           }
         }
       ]
