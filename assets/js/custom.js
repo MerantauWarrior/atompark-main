@@ -26,19 +26,17 @@ $(document).ready(function () {
   //header mobile
   if($(window).width() < 768){
     var lastScrollTop = 0;
-    $(window).on("scroll", function(){
-      if($(window).width() < 768){
-        var st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop){
-          if(st>window.innerHeight/2){
-            $('.header-search').fadeOut(250);
-          }
-        } else {
-          $('.header-search').fadeIn(250);
+    window.addEventListener('scroll', function(){
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop){
+        if(st>window.innerHeight/2){
+          $('.header-search').fadeOut(250);
         }
-        lastScrollTop = st <= 0 ? 0 : st;
+      } else {
+        $('.header-search').fadeIn(250);
       }
-    });
+      lastScrollTop = st <= 0 ? 0 : st;
+    }, {passive: true});
     $('.header-mobile-menu-toggle').click(function () {
       $('body').toggleClass('ovh');
       $('.header').toggleClass('header-navigation_opened');
