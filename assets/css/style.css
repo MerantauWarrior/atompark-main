@@ -461,7 +461,8 @@ body{
     color: #E5E5E5;
 }
 /*video*/
-.video-slider{
+.video-slider,
+.video-holder{
     position: relative;
     margin: 76px auto;
 }
@@ -1067,7 +1068,8 @@ body{
         display: none;
     }
     /*video*/
-    .video-slider{
+    .video-slider,
+    .video-holder{
         margin: 38px auto;
     }
 }

@@ -329,6 +329,45 @@
 .sp-reviews{
     padding: 123px 0 92px 0;
 }
+/*cta*/
+.sp-cta{
+    padding: 140px 0;
+    background-color: #F7B916;
+}
+.sp-cta__inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sp-cta__img{
+    max-width: 300px;
+}
+.sp-cta__content{
+    width: 100%;
+    max-width: 554px;
+}
+.sp-cta__title{
+    margin-bottom: 28px;
+    color: #1062AA;
+}
+.sp-cta__text{
+    margin-bottom: 76px;
+    font-size: 18px;
+    line-height: 28px
+}
+.sp-cta__btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*--- Single Product Features Page ---*/
+.sp-features-page{
+    padding: 60px 0 132px 0;
+}
+/*--- Single Product Screenshots Page ---*/
+.sp-screenshots{
+    padding: 60px 0 64px 0;
+}
 
 @media all and (min-width: 768px) and (max-width: 1024px){
     /*navigation*/
@@ -484,5 +523,34 @@
     /*reviews*/
     .sp-reviews{
         padding: 50px 0;
+    }
+    /*cta*/
+    .sp-cta{
+        padding: 50px 0;
+    }
+    .sp-cta__inner{
+        justify-content: center;
+        text-align: center;
+    }
+    .sp-cta__img{
+        margin-bottom: 30px;
+    }
+    .sp-cta__text{
+        margin-bottom: 45px;
+    }
+    .sp-cta__btns{
+        justify-content: center;
+    }
+    .sp-cta__btns .btn-two{
+        margin-top: 30px;
+    }
+
+    /*--- Single Product Features Page ---*/
+    .sp-features-page{
+        padding: 0 0 50px 0;
+    }
+    /*--- Single Product Screenshots Page ---*/
+    .sp-screenshots{
+        padding: 0 0 50px 0;
     }
 }

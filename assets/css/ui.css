@@ -77,7 +77,9 @@ a:hover{
 }
 .btn,
 .btn-p,
-.btn-maroon{
+.btn-two,
+.btn-maroon,
+.btn-black{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,6 +109,23 @@ a:hover{
     color: #1062AA;
     border: 2px solid #1062AA;
     background-color: transparent;
+}
+.btn-two{
+    background-color: #1062AA;
+    color: #FFFFFF;
+}
+.btn-two:hover{
+    background-color: #FFFFFF;
+    color: #1062AA;
+}
+.btn-black{
+    border: 2px solid #333333;
+    color: #1062AA;
+}
+.btn-black:hover,
+.black .btn-p:hover{
+    background-color: #333333;
+    color: #FFFFFF;
 }
 .btn-maroon{
     border: 2px solid #EF5237;
@@ -169,8 +188,12 @@ a:hover{
     font-size: 18px;
     line-height: 28px;
 }
-.typography h2{
+.typography h2,
+.typography h3{
     margin: 65px 0;
+}
+.typography * + h4{
+    margin-top: 65px;
 }
 .typography img{
     margin: 76px auto;
@@ -195,6 +218,9 @@ a:hover{
     /*typography*/
     .typography h2{
         margin: 32px 0;
+    }
+    .typography * + h4{
+        margin-top: 28px;
     }
     .typography img{
         margin: 38px auto;
