@@ -3,28 +3,6 @@ document.addEventListener("touchstart", function(){}, true);
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){
   console.log('you use mobile');
 }
-//Lazy load images
-document.addEventListener("DOMContentLoaded", function() {
-  function isVisible(elem) {
-    let coords = elem.getBoundingClientRect();
-    let windowHeight = document.documentElement.clientHeight;
-    let topVisible = coords.top > 0 && coords.top < windowHeight;
-    let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
-    return topVisible || bottomVisible;
-  }
-  function showVisible() {
-    for (let img of document.querySelectorAll('img.lazy-load')) {
-      let realSrc = img.dataset.src;
-      if (!realSrc) continue;
-      if (isVisible(img)) {
-        img.src = realSrc;
-        img.dataset.src = '';
-      }
-    }
-  }
-  window.addEventListener('scroll', showVisible);
-  showVisible();
-});
 
 $(document).ready(function () {
   // General
@@ -97,20 +75,17 @@ $(document).ready(function () {
         $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}','*');
       }
     });
-    $('.modal-home-cta__close').click(function () {
-      $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
-      $('.modal').hide();
-    });
-    $('.js-modal-home-cta').click(function(event) {
+    $('.js-modal-home-cta, .modal-home-cta__close').click(function(event) {
       if(event.target === this){
         $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
-        $(this).hide();
+        $('.js-modal-home-cta').hide();
       }
     });
   }
 
   if($('.home-regural__slider').length > 0){
     $('#homeBestsellers').slick({
+      lazyLoad: 'ondemand',
       infinite: false,
       dots: true,
       arrows: false,
@@ -173,7 +148,9 @@ $(document).ready(function () {
           breakpoint: 600,
           settings: {
             dots: true,
-            arrows: false
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
           }
         }
       ]
