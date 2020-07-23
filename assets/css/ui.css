@@ -75,6 +75,61 @@ a{
 a:hover{
     text-decoration: underline;
 }
+.inp{
+    width: 100%;
+    height: 50px;
+    padding: 0 36px;
+    border: 2px solid #1062AA;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+}
+.inp:focus::-webkit-input-placeholder{
+    color: transparent !important;
+}
+.inp:focus::-moz-placeholder{
+    color: transparent !important;
+}
+.inp:focus:-ms-input-placeholder{
+    color: transparent !important;
+}
+.inp:focus:-moz-placeholder{
+    color: transparent !important;
+}
+.checkbox-label{
+    position: relative;
+    display: block;
+    padding-left: 37px;
+    font-size: 12px;
+    line-height: 14px;
+}
+.checkbox-label:after,
+.checkbox-label:before{
+    content: "";
+    position: absolute;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.checkbox-label:after{top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1062AA;
+}
+.checkbox-label:before{
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+}
+input[type="checkbox"]:checked + .checkbox-label:before{
+    background-color: #F7B916;
+}
 .btn,
 .btn-p,
 .btn-two,
@@ -198,10 +253,10 @@ a:hover{
 .typography img{
     margin: 76px auto;
 }
-.typography ul:not(.slick-dots) li{
+.typography ul:not(.slick-dots) > li{
     padding-left: 20px;
 }
-.typography ul:not(.slick-dots) li:before{
+.typography ul:not(.slick-dots) > li:before{
     content: "";
     position: absolute;
     top: 12px;
@@ -213,10 +268,22 @@ a:hover{
     border-radius: 100%;
     background-color: #1062AA;
 }
+.typography ol:not(.slick-dots){
+    counter-reset: my-counter;
+}
+.typography ol:not(.slick-dots) > li{
+    counter-increment: my-counter;
+}
+.typography ol:not(.slick-dots) > li:before {
+    content: counter(my-counter) ". ";
+    color: #1062AA;
+}
+
 
 @media all and (min-width: 320px) and (max-width: 767px){
     /*typography*/
-    .typography h2{
+    .typography h2,
+    .typography h3{
         margin: 32px 0;
     }
     .typography * + h4{

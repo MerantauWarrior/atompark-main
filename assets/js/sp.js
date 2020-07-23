@@ -133,6 +133,26 @@ $(document).ready(function () {
       }
     ]
   });
-
+  $('.sp-download-compatible__slider').slick({
+    lazyLoad: 'ondemand',
+    infinite: false,
+    dots: true,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 9999,
+        settings: "unslick"
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 
 });

@@ -6,12 +6,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 }
 
 $(document).ready(function () {
-  // General
-  $('.video-play').click(function () {
-    $(this).hide();
-    $(this).parent().addClass('video_playing');
-    $(this).siblings('iframe').attr('src', $(this).siblings('iframe').data('src'));
-  });
   //Header
   $('.header-submenu__list-link').hover(function () {
     var srcImg = $(this).data('img')
@@ -63,5 +57,22 @@ $(document).ready(function () {
     $(this).toggleClass('footer-menu__arrow_opened');
     $(this).parent().parent().find('.footer-menu__list').slideToggle(250);
   });
+  //Video
+  if($('.video').length > 0){
+    $('.video-play').click(function () {
+      $(this).hide();
+      $(this).parent().addClass('video_playing');
+      $(this).siblings('iframe').attr('src', $(this).siblings('iframe').data('src'));
+    });
+  }
+  //Faqs
+  if ($('.faqs-item').length > 0) {
+    $('.faqs-item__question').click(function () {
+      $('.faqs-item__question').not($(this)).removeClass('faqs-item__question_opened');
+      $('.faqs-item__question').not($(this)).siblings('.faqs-item__content').slideUp(250);
+      $(this).toggleClass('faqs-item__question_opened');
+      $(this).siblings('.faqs-item__content').slideToggle(250);
+    });
+  }
 
 });
