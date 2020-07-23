@@ -74,5 +74,13 @@ $(document).ready(function () {
       $(this).siblings('.faqs-item__content').slideToggle(250);
     });
   }
+  //Modal
+  $('.modal, .modal__close').click(function (event) {
+    event.stopPropagation();
+    if (event.target === this) {
+      $('.modal').hide();
+      $('body').removeClass('ovh');
+    }
+  });
 
 });

@@ -238,6 +238,44 @@ input[type="checkbox"]:checked + .checkbox-label:before{
     background-color: #F7B916;
     border: 2px solid #F7B916;
 }
+/*modal*/
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background-color: rgba(51,51,51,0.5);
+    z-index: 99;
+}
+.modal__window{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #1062AA;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.modal__close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 33px;
+    height: 33px;
+    background: transparent url('../img/general/modal-close.svg') center center no-repeat;
+    cursor: pointer;
+}
 /*typography*/
 .typography{
     font-size: 18px;

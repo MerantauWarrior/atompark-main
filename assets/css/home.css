@@ -479,42 +479,11 @@ ul.home-regural-slide__list li:before{
 /*.inp-home-boost:focus:-moz-placeholder{*/
 /*    color: transparent;*/
 /*}*/
-/*modal*/
-.modal{
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(51,51,51,0.5);
-    z-index: 99;
-}
+
+/*modal cta*/
 .modal-home-cta{
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 50%;
-    padding: 15px;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-}
-.modal-home-cta__close{
-    width: 30px;
-    height: 30px;
-    margin: 0 0 15px auto;
-    border: 1px solid #1062AA;
-    text-align: center;
-    line-height: 30px;
-    color: #1062AA;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    cursor: pointer;
+    padding-top: 73px;
 }
 
 /*--- MEDIA ---*/

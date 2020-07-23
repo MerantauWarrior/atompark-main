@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
   $('.btn__home-cta-video').click(function () {
+    $('body').addClass('ovh');
     $('.modal').show();
     if ($('#homeCta').attr('src') === undefined || $('#homeCta').attr('src') === null) {
       $('#homeCta').attr('src', $('#homeCta').data('src'));
@@ -10,10 +11,9 @@ $(document).ready(function () {
     }
   });
 
-  $('.js-modal-home-cta, .modal-home-cta__close').click(function (event) {
+  $('.js-modal-home-cta, .js-modal-home-cta-close').click(function (event) {
     if (event.target === this) {
       $('#homeCta')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-      $('.js-modal-home-cta').hide();
     }
   });
 
