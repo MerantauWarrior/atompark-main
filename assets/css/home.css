@@ -467,19 +467,6 @@ ul.home-regural-slide__list li:before{
 .inp-home-boost:-moz-placeholder{
     color: #1062AA;
 }
-/*.inp-home-boost:focus::-webkit-input-placeholder{*/
-/*    color: transparent;*/
-/*}*/
-/*.inp-home-boost:focus::-moz-placeholder{*/
-/*    color: transparent;*/
-/*}*/
-/*.inp-home-boost:focus:-ms-input-placeholder{*/
-/*    color: transparent;*/
-/*}*/
-/*.inp-home-boost:focus:-moz-placeholder{*/
-/*    color: transparent;*/
-/*}*/
-
 /*modal cta*/
 .modal-home-cta{
     width: 50%;

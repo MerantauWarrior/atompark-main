@@ -549,8 +549,12 @@ body{
     left: -70px;
 }
 .slider-arrow svg{
+    fill: #1062AA;
+}
+.features .slider-arrow svg{
     fill: #F7B916;
 }
+.features .slick-disabled svg,
 .slick-disabled svg{
     fill: #E5E5E5;
 }

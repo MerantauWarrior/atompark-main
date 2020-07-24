@@ -133,7 +133,7 @@ input[type="checkbox"]:checked + .checkbox-label:before{
 .btn,
 .btn-p,
 .btn-two,
-.btn-maroon,
+.btn-white,
 .btn-black{
     display: flex;
     align-items: center;
@@ -165,6 +165,11 @@ input[type="checkbox"]:checked + .checkbox-label:before{
     border: 2px solid #1062AA;
     background-color: transparent;
 }
+.btn-p:hover{
+    color: #ffffff;
+    border: 2px solid #1062AA;
+    background-color: #1062AA;
+}
 .btn-two{
     background-color: #1062AA;
     color: #FFFFFF;
@@ -173,68 +178,62 @@ input[type="checkbox"]:checked + .checkbox-label:before{
     background-color: #FFFFFF;
     color: #1062AA;
 }
+.btn-white{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+}
+.btn-white:hover{
+    border: 2px solid #333333;
+    background-color: #333333;
+}
 .btn-black{
     border: 2px solid #333333;
-    color: #1062AA;
+    color: #333333;
 }
-.btn-black:hover,
-.black .btn-p:hover{
+.btn-black:hover{
     background-color: #333333;
     color: #FFFFFF;
 }
-.btn-maroon{
-    border: 2px solid #EF5237;
-    color: #333333;
-}
-.btn-maroon:hover,
-.maroon .btn-p:hover{
+.btn-maroon:hover{
     background-color: #FF6341;
     border: 2px solid #FF6341;
 }
-.btn-cornfieldblue:hover,
-.cornfieldblue .btn-p:hover{
+.btn-cornfieldblue:hover{
     background-color: #00ADEE;
     border: 2px solid #00ADEE;
 }
-.btn-lime:hover,
-.lime .btn-p:hover{
+.btn-lime:hover{
     background-color: #DDF516;
     border: 2px solid #DDF516;
 }
-.btn-darkviolet:hover,
-.darkviolet .btn-p:hover{
+.btn-darkviolet:hover{
     background-color: #010059;
     color: #ffffff;
     border: 2px solid #010059;
 }
-.btn-yellow:hover,
-.yellow .btn-p:hover{
+.btn-yellow:hover{
     background-color: #FFE735;
     border: 2px solid #FFE735;
 }
-.btn-blue:hover,
-.blue .btn-p:hover{
+.btn-blue:hover{
     background-color: #4AE4E4;
     border: 2px solid #4AE4E4;
 }
-.btn-greencyan:hover,
-.greencyan .btn-p:hover{
+.btn-greencyan:hover{
     background-color: #6FC6AD;
     border: 2px solid #6FC6AD;
 }
-.btn-pink:hover,
-.pink .btn-p:hover{
+.btn-pink:hover{
     background-color: #EB008B;
     color: #ffffff;
     border: 2px solid #EB008B;
 }
-.btn-salad:hover,
-.salad .btn-p:hover{
+.btn-salad:hover{
     background-color: #8CC63F;
     border: 2px solid #8CC63F;
 }
-.btn-orange:hover,
-.orange .btn-p:hover{
+.btn-orange:hover{
     background-color: #F7B916;
     border: 2px solid #F7B916;
 }
