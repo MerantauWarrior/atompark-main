@@ -101,6 +101,7 @@
 }
 .home-about-item:nth-child(even) .home-about-item__content{
     order: 1;
+    text-align: right;
 }
 .home-about-item__img-ml{
     margin-left: 130px;
@@ -557,6 +558,7 @@ ul.home-regural-slide__list li:before{
     }
     .home-about-item:nth-child(even) .home-about-item__content{
         order: 2;
+        text-align: left;
     }
     .home-about-item__title{
         margin-top: 15px;
