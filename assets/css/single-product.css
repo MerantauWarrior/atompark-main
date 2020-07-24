@@ -442,6 +442,9 @@
 .sp-download-how{
     padding-top: 127px;
 }
+.sp-download-how .video{
+    max-width: 707px;
+}
 .sp-download-faqs{
     padding-top: 51px;
 }
