@@ -7,6 +7,9 @@ ul li,
 ol li{
     position: relative;
 }
+table{
+    border-collapse: collapse;
+}
 button, input, textarea, a, div{
     outline: none;
 }
@@ -314,6 +317,10 @@ input[type="checkbox"]:checked + .checkbox-label:before{
 .typography ol:not(.slick-dots) > li:before {
     content: counter(my-counter) ". ";
     color: #1062AA;
+}
+.typography small{
+    font-size: 14px;
+    line-height: 28px;
 }
 
 
