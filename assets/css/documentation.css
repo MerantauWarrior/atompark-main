@@ -121,6 +121,12 @@
 .preCode-value{
     color: #00ADEE;
 }
+.preCode *::-moz-selection{
+    background: #F7B916;
+}
+.preCode *::selection{
+    background: #F7B916;
+}
 .preCode-copy{
     position: absolute;
     top: 12px;
