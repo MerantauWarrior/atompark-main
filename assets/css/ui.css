@@ -156,6 +156,7 @@ input[type="checkbox"]:checked + .checkbox-label:before{
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none !important;
     cursor: pointer;

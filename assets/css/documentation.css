@@ -3,6 +3,7 @@
     padding: 74px 0 140px 0;
 }
 .documentation__inner{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -88,9 +89,23 @@
 .documentation .btns-holder{
     display: flex;
     flex-wrap: wrap;
+    margin: 74px 0 130px 0;
 }
 .documentation .btns-holder *{
     margin-right: 30px;
+}
+.documentation-mob-nav{
+    display: none;
+    width: 60px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    background-color: #1062AA;
+    color: #ffffff;
+    text-align: center;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
 }
 /*PreCode styles start*/
 .preCode{
@@ -152,3 +167,57 @@
     cursor: pointer;
 }
 /*PreCode styles end*/
+
+@media all and (min-width: 320px) and (max-width: 1024px){
+    .documentation{
+        padding-top: 40px;
+    }
+    .documentation-mob-nav{
+        display: block;
+    }
+    .documentation-nav{
+        position: absolute;
+        top: 0;
+        left: -280px;
+        -webkit-transition: all 0.25s;
+        -moz-transition: all 0.25s;
+        -ms-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+    }
+    .documentation-nav_opened{
+        left: 0;
+    }
+    .documentation-content{
+        max-width: 100%;
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px){
+    .documentation{
+        padding-bottom: 60px;
+    }
+    .documentation .btns-holder{
+        margin: 30px 0;
+    }
+    .documentation .btns-holder *{
+        margin: 15px 0;
+        font-size: 16px;
+    }
+    .documentation-content p > b{
+        word-break: break-word;
+    }
+    .preCode{
+        margin: 30px 0;
+        padding: 12px 12px 12px 61px;
+    }
+    .preCode-lines{
+        left: 12px;
+    }
+    .preCode-text{
+        overflow-x: auto;
+    }
+    .preCode-text-inner{
+        width: 400px;
+    }
+}
