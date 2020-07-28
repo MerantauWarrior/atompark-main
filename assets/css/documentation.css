@@ -85,3 +85,57 @@
     border-top: 1px solid #1062AA;
     padding: 22px 16px;
 }
+/*PreCode styles start*/
+.preCode{
+    position: relative;
+    margin: 40px 0 74px;
+    padding: 12px 32px 12px 81px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #333333;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    color: #ffffff;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+}
+.preCode:last-child{
+    margin-bottom: 0;
+}
+.preCode-lines{
+    position: absolute;
+    top: 12px;
+    left: 32px;
+    width: 30px;
+    border-right: 1px solid #F7B916;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.preCode-value{
+    color: #00ADEE;
+}
+.preCode-copy{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 2px 5px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #ffffff;
+    color: #333333;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+/*PreCode styles end*/
