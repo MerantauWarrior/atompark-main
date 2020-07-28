@@ -144,9 +144,11 @@ input[type="checkbox"]:checked + .checkbox-label:before{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 260px;
+    /*width: 100%;*/
+    /*max-width: 260px;*/
+    min-width: 260px;
     height: 50px;
+    padding: 0 26px;
     -webkit-border-radius: 45px;
     -moz-border-radius: 45px;
     border-radius: 45px;
