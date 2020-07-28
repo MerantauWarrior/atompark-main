@@ -145,6 +145,10 @@
     font-size: 14px;
     line-height: 20px;
 }
+.preCode-text-inner{
+    font-size: 14px;
+    line-height: 20px;
+}
 .preCode-value{
     color: #00ADEE;
 }
