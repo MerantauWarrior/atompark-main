@@ -140,6 +140,11 @@
     -ms-user-select: none;
     user-select: none;
 }
+.preCode-lines div{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
 .preCode-value{
     color: #00ADEE;
 }
