@@ -176,6 +176,31 @@
     cursor: pointer;
 }
 /*PreCode styles end*/
+/*--- MANUAL ---*/
+.documentation-programs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 65px;
+}
+.documentation-programs__item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 33.333333%;
+    padding-right: 30px;
+}
+.documentation-programs__icon{
+    width: 43px;
+    min-width: 43px;
+    margin-right: 24px;
+}
+.documentation-programs__link{
+    max-width: 195px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #1062AA;
+}
 
 @media all and (min-width: 320px) and (max-width: 1024px){
     .documentation{
@@ -193,6 +218,7 @@
         -ms-transition: all 0.25s;
         -o-transition: all 0.25s;
         transition: all 0.25s;
+        z-index: 2;
     }
     .documentation-nav_opened{
         left: 0;
@@ -216,6 +242,7 @@
     .documentation-content p > b{
         word-break: break-word;
     }
+    /*PRE*/
     .preCode{
         margin: 30px 0;
         padding: 12px 12px 12px 61px;
@@ -228,5 +255,13 @@
     }
     .preCode-text-inner{
         width: 400px;
+    }
+    /*MANUAL*/
+    .documentation-programs{
+        margin-top: 30px;
+    }
+    .documentation-programs__item{
+        max-width: 100%;
+        margin: 15px 0;
     }
 }

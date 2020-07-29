@@ -29,9 +29,6 @@ body{
 .container-md{
     max-width: 975px;
 }
-.text-center{
-    text-align: center;
-}
 .ovh{
     overflow: hidden;
 }
