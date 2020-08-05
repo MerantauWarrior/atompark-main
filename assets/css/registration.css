@@ -1,0 +1,222 @@
+.registration-logo{
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    width: 68px;
+    height: 50px;
+    background: transparent url('../img/general/footer/footer-logo.svg') center center no-repeat;
+    background-size: cover;
+    z-index: 2;
+}
+.registration-content{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+.registration-info,
+.registration-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.registration-info{
+    width: 40%;
+    background: transparent url('../img/registration/reg-bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+.registration-info-numbers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+}
+.registration-info-numbers__item{
+    width: 165px;
+    margin-top: 65px;
+    text-align: center;
+}
+.registration-info-numbers__value{
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 36px;
+    color: #F7B916;
+}
+.registration-info-numbers__text{
+    font-size: 18px;
+    line-height: 1em;
+    color: #FFFFFF;
+}
+.registration-info-reviews{
+    width: 100%;
+    max-width: 322px;
+    margin-top: 110px;
+}
+.registration-info-reviews__text,
+.registration-info-reviews__author{
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    color: #FFFFFF;
+}
+.registration-info-reviews__author{
+    margin-top: 14px;
+    font-weight: bold;
+}
+.registration-form{
+    width: 60%;
+    padding: 100px 0;
+}
+.registration-form__inner{
+    width: 100%;
+    max-width: 260px;
+}
+.registration-form__title{
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+}
+.registration-form__form{
+    font-size: 11px;
+}
+.registration-form__field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.registration-label{
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+.registration-label span{
+    color: #1062AA;
+}
+.registration-form .inp{
+    font-size: 14px;
+    line-height: 16px;
+}
+.registration-form .checkbox-label{
+    font-size: 11px;
+}
+.registration-form__btn{
+    margin: 40px 0 26px 0;
+    text-transform: none;
+}
+/*Step*/
+.registration-step{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+.registration-step__img{
+    margin-bottom: 48px;
+}
+.registration-step__title{
+    margin-bottom: 27px;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+}
+.registration-step__text{
+    margin-bottom: 37px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.registration-step__text span{
+    color: #1062AA;
+}
+.registration-step__warn{
+    margin-bottom: 25px;
+    font-size: 11px;
+    line-height: 13px;
+    color: #807E7E;
+}
+.registration-step__link{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px){
+    .registration-info-numbers{
+        max-width: 220px;
+        margin: 0 auto;
+    }
+    .registration-info-numbers__item{
+        width: 95px;
+        margin-top: 40px;
+    }
+    .registration-info-numbers__value{
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+    .registration-info-numbers__text{
+        font-size: 14px;
+    }
+    .registration-info-reviews{
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .registration-info-reviews__sign{
+        margin-bottom: 10px;
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px){
+    .registration-logo{
+        position: static;
+        margin: 40px auto 80px auto;
+        background: transparent url('../img/general/header/header-logo.svg') center center no-repeat;
+        background-size: cover;
+    }
+    .registration-content{
+        flex-direction: column;
+    }
+    .registration-info{
+        order: 2;
+        width: 100%;
+        padding: 40px 10px 80px 10px;
+    }
+    .registration-form{
+        order: 1;
+        width: 100%;
+        margin-bottom: 80px;
+        padding: 0;
+    }
+    .registration-info-numbers{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .registration-info-numbers__item{
+        width: 135px;
+        padding: 0 10px;
+        margin-top: 40px;
+    }
+    .registration-info-numbers__text{
+        font-size: 14px;
+    }
+    .registration-info-numbers__value{
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+    .registration-info-reviews{
+        max-width: 100%;
+        margin-top: 70px;
+    }
+    .registration-info-reviews__item{
+        padding-left: 30px;
+    }
+    .registration-info-reviews__sign{
+        margin-left: -30px;
+        margin-bottom: -14px;
+    }
+}
