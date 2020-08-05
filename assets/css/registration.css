@@ -2,7 +2,7 @@
     display: block;
     position: absolute;
     top: 70px;
-    left: 50px;
+    left: 10%;
     width: 68px;
     height: 50px;
     background: transparent url('../img/general/footer/footer-logo.svg') center center no-repeat;
@@ -144,6 +144,49 @@
     font-size: 18px;
     line-height: 21px;
 }
+/*Login*/
+.checkbox-label--forgot{
+    display: flex;
+    justify-content: space-between;
+}
+/*Forgot*/
+.registration-form__title--forgot{
+    margin-bottom: 30px;
+}
+.registration-form__btn--forgot{
+    margin-top: 30px;
+}
+.forgot-switch{
+    display: flex;
+    margin-bottom: 25px;
+}
+.forgot-switch__item{
+    position: relative;
+    width: 68px;
+    height: 27px;
+    text-align: center;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 27px;
+    color: #333333;
+}
+.forgot-switch__item_active:after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 14px solid #F7B916;
+    border-left: 14px solid transparent;
+}
+.forgot-switch__item_active,
+.forgot-switch__item:hover{
+    background-color: #F7B916;
+    text-decoration: none;
+}
 
 @media all and (min-width: 768px) and (max-width: 1024px){
     .registration-info-numbers{
@@ -184,7 +227,7 @@
     .registration-info{
         order: 2;
         width: 100%;
-        padding: 40px 10px 80px 10px;
+        padding: 40px 15px 80px 15px;
     }
     .registration-form{
         order: 1;

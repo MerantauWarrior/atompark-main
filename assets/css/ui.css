@@ -150,22 +150,23 @@ a:hover{
 .checkbox-label:before{
     content: "";
     position: absolute;
+    top: 50%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
 }
 .checkbox-label:after{
-    top: 0;
     left: 0;
     width: 16px;
     height: 16px;
+    margin-top: -10px;
     border: 2px solid #1062AA;
 }
 .checkbox-label:before{
-    top: 5px;
     left: 5px;
     width: 10px;
     height: 10px;
+    margin-top: -5px;
     background-color: #ffffff;
 }
 input[type="checkbox"]:checked + .checkbox-label:before{
