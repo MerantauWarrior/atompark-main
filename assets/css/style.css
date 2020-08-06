@@ -704,6 +704,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+/*counter*/
+.counter{
+    padding: 96px 0 105px 0;
+    background-color: #1062AA;
+}
+.counter__text{
+    text-align: center;
+    color: #FFFFFF;
+}
+.counter__text span{
+    color: #F7B916;
+}
 
 @media all and (min-width: 768px){
     /*header*/
@@ -1133,5 +1145,13 @@
     }
     .bottom-cta__btns .btn-two{
         margin-top: 30px;
+    }
+    /*counter*/
+    .counter{
+        padding: 50px 0;
+    }
+    .counter__text{
+        font-size: 26px;
+        line-height: 32px;
     }
 }

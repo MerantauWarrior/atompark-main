@@ -66,39 +66,5 @@ $(document).ready(function () {
     ]
   });
 
-  $('#homeReviews').slick({
-    infinite: false,
-    dots: false,
-    arrows: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: $('#homeReviews').parent().find('.slider-arrow--prev'),
-    nextArrow: $('#homeReviews').parent().find('.slider-arrow--next'),
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          dots: true,
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });
-
-
-  function formattedHC(initalHCNumber) {
-    $('.js-home-counter').text(initalHCNumber.toString().replace(/^(\d+)(\d{3})(\d{3})$/g, '$1, $2 $3'));
-  }
-
-  var initalHCNumber = parseInt(localStorage.getItem('homeCounter') ? localStorage.getItem('homeCounter') : 1000000);
-  formattedHC(initalHCNumber);
-  setInterval(function () {
-    initalHCNumber = initalHCNumber + parseInt(Math.ceil(Math.random() * 10));
-    localStorage.setItem('homeCounter', initalHCNumber);
-    formattedHC(initalHCNumber);
-  }, parseInt(Math.ceil(Math.random() * 10)) * 1000)
-
 
 });

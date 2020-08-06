@@ -75,12 +75,57 @@ $(document).ready(function () {
     });
   }
   //Modal
-  $('.modal, .modal__close').click(function (event) {
-    event.stopPropagation();
-    if (event.target === this) {
-      $('.modal').hide();
-      $('body').removeClass('ovh');
+  if($('.modal').length > 0){
+    $('.modal, .modal__close').click(function (event) {
+      event.stopPropagation();
+      if (event.target === this) {
+        $('.modal').hide();
+        $('body').removeClass('ovh');
+      }
+    });
+  }
+  // Reviews
+  if($('.reviews-slider').length > 0){
+    $('.reviews-slider').slick({
+      infinite: false,
+      dots: true,
+      arrows: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.reviews-slider').parent().find('.slider-arrow--prev'),
+      nextArrow: $('.reviews-slider').parent().find('.slider-arrow--next'),
+      responsive: [
+        {
+          breakpoint: 1300,
+          settings: {
+            dots: true,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+  // Counter
+  if($('.js-counter').length > 0){
+    function formattedHC(initalHCNumber) {
+      $('.js-counter').text(initalHCNumber.toString().replace(/^(\d+)(\d{3})(\d{3})$/g, '$1, $2 $3'));
     }
-  });
+    var initalHCNumber = parseInt(localStorage.getItem('homeCounter') ? localStorage.getItem('homeCounter') : 1000000);
+    formattedHC(initalHCNumber);
+    setInterval(function () {
+      initalHCNumber = initalHCNumber + parseInt(Math.ceil(Math.random() * 10));
+      localStorage.setItem('homeCounter', initalHCNumber);
+      formattedHC(initalHCNumber);
+    }, parseInt(Math.ceil(Math.random() * 10)) * 1000);
+  }
 
 });

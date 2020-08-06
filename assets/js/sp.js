@@ -106,33 +106,6 @@ $(document).ready(function () {
       }
     ]
   });
-  $('#spReviews').slick({
-    infinite: false,
-    dots: true,
-    arrows: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: $('#spReviews').parent().find('.slider-arrow--prev'),
-    nextArrow: $('#spReviews').parent().find('.slider-arrow--next'),
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          dots: true,
-          arrows: false
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          dots: true,
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });
   $('.sp-download-compatible__slider').slick({
     lazyLoad: 'ondemand',
     infinite: false,
