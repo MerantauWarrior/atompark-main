@@ -407,13 +407,169 @@
         margin: 0 30px;
     }
 }
-@media all and (min-width: 320px) and (max-width: 767px){
+
+@media all and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
     /*top*/
     .ss-top__inner{
+        flex-wrap: nowrap;
+    }
+    .ss-top__content{
+        margin-left: 30px;
+    }
+    /*start features*/
+    .ss-start-feature{
         flex-direction: column;
+        justify-content: flex-start;
+        max-width: 48%;
+    }
+    .ss-start-feature__icon{
+        margin-bottom: 15px;
+    }
+    .ss-comeback__screen{
+        margin-top: 30px;
+    }
+    /*sms push*/
+    .ss-sms-push-item{
+        width: 30%;
+    }
+    /*comeback*/
+    .ss-comeback__content{
+        justify-content: center;
+    }
+    /*send crm*/
+    .send-crm-item{
+        margin: 0 15px;
+    }
+    /*how send*/
+    .how-send__inner{
+        justify-content: center;
+    }
+    .how-send-item{
+        width: 180px;
+        margin: 15px;
+    }
+    /*how start*/
+    .how-start__inner{
+        flex-wrap: nowrap;
+    }
+    /*cta*/
+    .ss-cta__img,
+    .ss-cta__content{
+        width: 44%;
+        margin: 0 3%;
+    }
+}
+@media all and (min-width: 320px) and (max-width: 767px){
+    /*top*/
+    .ss-top{
+        padding: 50px 0;
+    }
+    .ss-top__inner{
+        flex-direction: column;
+    }
+    .ss-top__title{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .ss-top__btns{
+        justify-content: center;
     }
     /*navigation*/
     .ss-navigation__list-item{
         margin: 0 10px;
+    }
+    /*start features*/
+    .ss-start-features{
+        margin: 50px 0;
+    }
+    .ss-start-features__list{
+        margin-top: 30px;
+    }
+    .ss-start-feature{
+        justify-content: center;
+    }
+    .ss-start-feature__content{
+        text-align: center;
+    }
+    .ss-start-features__btn{
+        margin-top: 30px;
+    }
+    /*sms push*/
+    .ss-sms-push-item{
+        width: 50%;
+    }
+    .ss-sms-push__items{
+        margin: 30px 0;
+    }
+    /*comeback*/
+    .ss-comeback{
+        margin-bottom: 0;
+    }
+    .ss-comeback__content{
+        justify-content: center;
+    }
+    .ss-comeback__text{
+        margin: 30px 0 20px 0;
+    }
+    .ss-comeback-item{
+        margin-top: 30px;
+    }
+    .ss-comeback__screen{
+        margin-top: 30px;
+    }
+    /*send crm*/
+    .send-crm{
+        margin: 50px 0;
+    }
+    .send-crm__text{
+        margin: 30px 0;
+    }
+    .send-crm-item{
+        margin-bottom: 20px;
+    }
+    /*how send*/
+    .how-send{
+        margin-bottom: 50px;
+    }
+    .how-send__inner{
+        margin-top: 30px;
+    }
+    .how-send-item{
+        margin-bottom: 20px;
+    }
+    /*how start*/
+    .how-start{
+        margin-bottom: 50px;
+    }
+    .how-start__inner{
+        margin-top: 30px;
+    }
+    .how-start__img{
+        display: flex;
+        justify-content: center;
+    }
+    .how-start__content{
+        margin-top: 20px;
+    }
+    .how-start__text{
+        margin-bottom: 30px;
+    }
+    /*cta*/
+    .ss-cta{
+        margin: 70px 0;
+    }
+    .ss-cta__inner{
+        padding: 40px 20px;
+    }
+    .ss-cta__img{
+        margin-bottom: 20px;
+    }
+    .ss-cta__img,
+    .ss-cta__content{
+        width: 100%;
+        max-width: 100%;
+    }
+    .ss-cta__btn{
+        justify-content: center;
     }
 }
