@@ -136,7 +136,7 @@
     text-decoration: none;
 }
 .header-login{
-    margin-left: 59px;
+    margin-left: 52px;
 }
 .header-signup{
     display: flex;
@@ -157,22 +157,32 @@
 }
 .header-lang{
     position: relative;
-    width: 30px;
-    height: 30px;
-    margin-left: 34px;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    border: 1px solid #1062AA;
+    margin-left: 20px;
 }
-.header-lang span{
-    display: block;
-    font-weight: 500;
+.header-lang__switch{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header-lang__switch-text{
+    margin: 0 11px;
     font-size: 14px;
     line-height: 30px;
-    text-align: center;
     color: #333333;
-    cursor: pointer;
+}
+.header-lang__switch-arrow{
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.header-lang__switch_active .header-lang__switch-arrow{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 .header-lang__select{
     display: none;
@@ -908,8 +918,18 @@
         right: 15px;
         border: 2px solid #1062AA;
     }
-    .header-lang span{
-        line-height: 40px;
+    .header-lang__switch{
+        justify-content: center;
+    }
+    .header-lang__switch-icon{
+        display: none;
+    }
+    .header-lang__switch-arrow{
+        display: none;
+    }
+    .header-lang__switch-text{
+        margin: 0;
+        line-height: 36px;
         color: #1062AA;
     }
     .header-login{
