@@ -9,12 +9,34 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet">
   <link rel="stylesheet" href="assets/css/ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/registration.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
 <div class="registration">
+  <div class="header-lang registration-lang">
+    <div class="header-lang__switch">
+      <div class="header-lang__switch-icon"><img src="assets/img/general/header/lang.svg" alt="language"></div>
+      <div class="header-lang__switch-text">RU</div>
+      <div class="header-lang__switch-arrow">
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+              d="M5.42426 5.42426C5.18995 5.65858 4.81005 5.65858 4.57574 5.42426L0.757359 1.60589C0.523045 1.37157 0.523045 0.991674 0.757359 0.757359C0.991674 0.523044 1.37157 0.523044 1.60589 0.757359L5 4.15147L8.39411 0.757359C8.62843 0.523045 9.00833 0.523045 9.24264 0.757359C9.47696 0.991674 9.47696 1.37157 9.24264 1.60589L5.42426 5.42426ZM5.6 4L5.6 5L4.4 5L4.4 4L5.6 4Z"
+              fill="#1062AA"/>
+        </svg>
+      </div>
+    </div>
+    <div class="header-lang__select">
+      <div class="header-lang__item">
+        <a href="#" class="header-lang__link">Русский</a>
+      </div>
+      <div class="header-lang__item">
+        <a class="header-lang__link header-lang__link_current">English</a>
+      </div>
+    </div>
+  </div>
   <a href="#" class="registration-logo"></a>
   <div class="registration-content">
     <div class="registration-info">
@@ -73,6 +95,7 @@
 </div>
 
 <script src="libs/jquery-3.4.1.min.js"></script>
+<script src="assets/js/custom.js"></script>
 <script>
   $(document).ready(function () {
     var htmlEmail = '<input type="email" name="q1" id="q1" class="inp" placeholder="ivanov@gmail.com" required>';

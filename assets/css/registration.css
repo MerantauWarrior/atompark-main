@@ -11,9 +11,9 @@
     position: absolute;
     top: 70px;
     left: 50px;
-    width: 68px;
-    height: 50px;
-    background: transparent url('../img/general/footer/footer-logo.svg') center center no-repeat;
+    width: 55px;
+    height: 28px;
+    background: transparent url('../img/registration/logo-small.svg') center center no-repeat;
     background-size: cover;
     z-index: 2;
 }
@@ -233,7 +233,7 @@
     .registration-logo{
         position: static;
         margin: 40px auto 80px auto;
-        background: transparent url('../img/general/header/header-logo.svg') center center no-repeat;
+        background: transparent url('../img/registration/logo-small-dark.svg') center center no-repeat;
         background-size: cover;
     }
     .registration-content{
