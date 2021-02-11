@@ -84,37 +84,124 @@
         <form action="" method="get" class="registration-form__form">
           <div class="registration-form__field">
             <label for="q" class="registration-label">Ваше Имя <span>*</span></label>
-            <input type="text" name="q" id="q" class="inp" placeholder="Иванов Иван" required>
+            <input type="text" name="q" id="q" class="inp js-empty" placeholder="Введите своё имя" required>
           </div>
           <div class="registration-form__field">
-            <label for="q1" class="registration-label">Email <span>*</span></label>
-            <input type="email" name="q1" id="q1" class="inp" placeholder="ivanov@gmail.com" required>
+            <label for="q1" class="registration-label">Email (на этот email будет отправлен ключ активации) <span>*</span></label>
+            <input type="email" name="q1" id="q1" class="inp js-email js-isEmail js-empty" placeholder="Введите свой email" required>
           </div>
           <div class="registration-form__field">
-            <label for="q2" class="registration-label">Моб. телефон (будет отправлен код) <span>*</span></label>
-            <input type="tel" name="q2" id="q2" class="inp" placeholder="+38 063 555 55 55" required>
+            <label for="q2" class="registration-label">Телефон (будет отправлен код) <span>*</span></label>
+            <input type="tel" name="q2" id="q2" class="inp js-number js-empty" placeholder="Введите свой телефон" required>
           </div>
           <div class="registration-form__field">
             <label for="q3" class="registration-label">Пароль <span>*</span></label>
-            <input type="password" name="q3" id="q3" class="inp" placeholder="poivtohkhjk765iuyu" required>
+            <input type="password" name="q3" id="q3" class="inp js-empty" placeholder="Придумайте пароль" required>
           </div>
           <div class="registration-form__field">
-            <input type="checkbox" name="q4" id="q4">
-            <label for="q4" class="checkbox-label">Я хочу получать полезную информацию на свой email</label>
+            <label for="q43" class="registration-label">Сфера деятельности</label>
+            <div class="select select-log-reg">
+              <select name="q43" id="q43">
+                <option value="0" selected>Выбрать</option>
+                <option value="#1">Архитектура</option>
+                <option value="#2">Бытовые услуги</option>
+                <option value="#3">Интернет-бизнес</option>
+                <option value="4">ЖКХ</option>
+                <option value="5">Салоны красоты</option>
+                <option value="6">Медицина</option>
+                <option value="#1">Архитектура</option>
+                <option value="#2">Бытовые услуги</option>
+                <option value="#3">Интернет-бизнес</option>
+                <option value="4">ЖКХ</option>
+                <option value="5">Салоны красоты</option>
+                <option value="6">Медицина</option>
+              </select>
+            </div>
           </div>
-          <div>Регистрируясь, вы соглашаетесь с <a href="#" target="_blank">Политикой конфиденциальности</a> и
+          <div class="registration-form__field">
+            <label for="q5" class="registration-label">Должность</label>
+            <div class="select select-log-reg">
+              <select name="q5" id="q5">
+                <option value="0" selected>Выбрать</option>
+                <option value="#1">Бухгалтер</option>
+                <option value="#2">Генеральный директор</option>
+                <option value="#3">Директор</option>
+                <option value="4">Менеджер</option>
+                <option value="5">Маркетолог</option>
+                <option value="6">Секретарь</option>
+                <option value="#1">Бухгалтер</option>
+                <option value="#2">Генеральный директор</option>
+                <option value="#3">Директор</option>
+                <option value="4">Менеджер</option>
+                <option value="5">Маркетолог</option>
+                <option value="6">Секретарь</option>
+              </select>
+            </div>
+          </div>
+          <div class="registration-form__policy">Регистрируясь, вы соглашаетесь с <a href="#" target="_blank">Политикой конфиденциальности</a> и
             подтверждаете согласие с
             <a href="#" target="_blank">Правилами пользования сервисом</a>.
           </div>
-          <button class="btn registration-form__btn" type="submit">Регистрация</button>
-          <div class="text-center">Уже зарегистрированы? <a href="#">Войти</a></div>
+          <div>
+            <input type="checkbox" name="q4" id="q4" checked>
+            <label for="q4" class="checkbox-label">Я хочу получать полезную информацию на свой email</label>
+          </div>
+          <div class="registration-form__btns">
+            <button class="btn registration-form__btn" type="submit" disabled>Регистрация</button>
+            <a href="#" class="registration-form__login">Войти</a>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </div>
 
-<script src="libs/jquery-3.4.1.min.js" defer></script>
-<script src="assets/js/custom.js" defer></script>
+<script src="libs/jquery-3.4.1.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script>
+  $(document).ready(function () {
+    // Only nambers
+    $.fn.inputFilter = function(inputFilter) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          this.value = "";
+        }
+      });
+    };
+    $(".js-number").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+    });
+    $(".js-email").inputFilter(function(value) {
+      return /^[a-zA-Z0-9@+\.]*$/.test(value);
+    });
+    $('.js-isEmail').on('keyup blur', function(){
+      var valid = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,8})?$/.test(this.value) && this.value.length;
+      if(valid){
+        $(this).removeClass('error');
+      }else {
+        $(this).addClass('error');
+      }
+    });
+    $('.js-empty').on('keyup blur', function(){
+      if($.trim($(this).val()).length === 0){
+        $(this).addClass('error');
+      }else {
+        $(this).removeClass('error');
+      }
+      var state = $('.js-empty').filter(function () {
+        return $.trim($(this).val()).length === 0
+      }).length === 0;
+      state === false ? $(this).closest('form').find('button').attr('disabled', true) : $(this).closest('form').find('button').attr('disabled', false);
+    });
+
+  });
+</script>
 </body>
 </html>
