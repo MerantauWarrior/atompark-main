@@ -172,6 +172,51 @@ a:hover{
 input[type="checkbox"]:checked + .checkbox-label:before{
     background-color: #F7B916;
 }
+
+.checkbox-label-v2{
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+}
+.checkbox-label-v2:after,
+.checkbox-label-v2:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+}
+.checkbox-label-v2:before{
+    top: -4px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1062AA;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.checkbox-label-v2:after{
+    top: 2px;
+    left: 7px;
+    width: 5px;
+    height: 5px;
+    border: solid #1062AA;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+    opacity: 0;
+}
+input[type="checkbox"]:checked + .checkbox-label-v2:after{
+    opacity: 1;
+}
+
 .btn,
 .btn-p,
 .btn-two,

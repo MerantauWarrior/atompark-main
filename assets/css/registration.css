@@ -133,6 +133,7 @@
 }
 .registration-form__policy{
     margin-bottom: 15px;
+    line-height: 18px;
 }
 .registration-form .checkbox-label{
     font-size: 11px;
@@ -298,6 +299,9 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+}
+.registration-form__create{
+    margin-top: 15px;
 }
 /*Login*/
 .checkbox-label--forgot{

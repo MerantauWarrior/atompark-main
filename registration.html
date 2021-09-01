@@ -87,12 +87,15 @@
             <input type="text" name="q" id="q" class="inp js-empty" placeholder="Введите своё имя" required>
           </div>
           <div class="registration-form__field">
-            <label for="q1" class="registration-label">Email (на этот email будет отправлен ключ активации) <span>*</span></label>
-            <input type="email" name="q1" id="q1" class="inp js-email js-isEmail js-empty" placeholder="Введите свой email" required>
+            <label for="q1" class="registration-label">Email (на этот email будет отправлен ключ активации)
+              <span>*</span></label>
+            <input type="email" name="q1" id="q1" class="inp js-email js-isEmail js-empty"
+                   placeholder="Введите свой email" required>
           </div>
           <div class="registration-form__field">
             <label for="q2" class="registration-label">Телефон (будет отправлен код) <span>*</span></label>
-            <input type="tel" name="q2" id="q2" class="inp js-number js-empty" placeholder="Введите свой телефон" required>
+            <input type="tel" name="q2" id="q2" class="inp js-number js-empty" placeholder="Введите свой телефон"
+                   required>
           </div>
           <div class="registration-form__field">
             <label for="q3" class="registration-label">Пароль <span>*</span></label>
@@ -138,13 +141,18 @@
               </select>
             </div>
           </div>
-          <div class="registration-form__policy">Регистрируясь, вы соглашаетесь с <a href="#" target="_blank">Политикой конфиденциальности</a> и
-            подтверждаете согласие с
-            <a href="#" target="_blank">Правилами пользования сервисом</a>.
+          <div class="registration-form__policy">
+
+            <input type="checkbox" name="q6" id="q6">
+            <label for="q6" class="checkbox-label-v2">
+              Я ознакомился и соглашаюсь с <a href="#" target="_blank">Политикой конфиденциальности</a> и подтверждаю
+              согласие с <a href="#" target="_blank">Правилами пользования сервисом.</a>
+            </label>
+
           </div>
           <div>
-            <input type="checkbox" name="q4" id="q4" checked>
-            <label for="q4" class="checkbox-label">Я хочу получать полезную информацию на свой email</label>
+            <input type="checkbox" name="q4" id="q4">
+            <label for="q4" class="checkbox-label-v2">Я хочу получать полезную информацию на свой email</label>
           </div>
           <div class="registration-form__btns">
             <button class="btn registration-form__btn" type="submit" disabled>Регистрация</button>
@@ -161,8 +169,8 @@
 <script>
   $(document).ready(function () {
     // Only nambers
-    $.fn.inputFilter = function(inputFilter) {
-      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+    $.fn.inputFilter = function (inputFilter) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
         if (inputFilter(this.value)) {
           this.oldValue = this.value;
           this.oldSelectionStart = this.selectionStart;
@@ -175,24 +183,24 @@
         }
       });
     };
-    $(".js-number").inputFilter(function(value) {
+    $(".js-number").inputFilter(function (value) {
       return /^\d*$/.test(value);
     });
-    $(".js-email").inputFilter(function(value) {
+    $(".js-email").inputFilter(function (value) {
       return /^[a-zA-Z0-9@+\.]*$/.test(value);
     });
-    $('.js-isEmail').on('keyup blur', function(){
+    $('.js-isEmail').on('keyup blur', function () {
       var valid = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,8})?$/.test(this.value) && this.value.length;
-      if(valid){
+      if (valid) {
         $(this).removeClass('error');
-      }else {
+      } else {
         $(this).addClass('error');
       }
     });
-    $('.js-empty').on('keyup blur', function(){
-      if($.trim($(this).val()).length === 0){
+    $('.js-empty').on('keyup blur', function () {
+      if ($.trim($(this).val()).length === 0) {
         $(this).addClass('error');
-      }else {
+      } else {
         $(this).removeClass('error');
       }
       var state = $('.js-empty').filter(function () {
